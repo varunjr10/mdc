@@ -1,0 +1,348 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #667eea;
+            color: white;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #1a202e;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #ff6b35;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #ff6b35;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 100px 20px 20px;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .section {
+            background-color: #1a202e;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #ff6b35;
+            font-size: 2.5em;
+            margin: 0;
+            text-align: center;
+        }
+
+        h2 {
+            color: #f7931e;
+            font-size: 1.8em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            color: #ff6b35;
+            font-size: 1.3em;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            background-color: #ff6b35;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+        }
+
+        .intro {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skill {
+            background-color: #764ba2;
+            padding: 15px;
+            border-radius: 8px;
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+        }
+
+        .qualification {
+            background-color: #2d3748;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ff6b35;
+        }
+
+        .contact-info {
+            text-align: center;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 2px solid #4a5568;
+            border-radius: 5px;
+            font-size: 1em;
+            background-color: #2d3748;
+            color: white;
+            box-sizing: border-box;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: #a0aec0;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #ff6b35;
+        }
+
+        button {
+            background-color: #ff6b35;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+        }
+
+        button:hover {
+            background-color: #f7931e;
+        }
+
+        @media (max-width: 600px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-links {
+                gap: 15px;
+            }
+            
+            .container {
+                padding-top: 140px;
+            }
+            
+            .skills {
+                flex-direction: column;
+            }
+            
+            .skill {
+                min-width: auto;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Varun Jayakumar</div>
+            <ul class="nav-links">
+                <li><a href="#" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" onclick="showPage('about')">About</a></li>
+                <li><a href="#" onclick="showPage('education')">Education</a></li>
+                <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <div class="section">
+                <div class="profile-pic">👋</div>
+                <h1>Varun Jayakumar</h1>
+                <p class="intro">IMBA Student at Rajagiri College of Social Sciences</p>
+                <p style="text-align: center;">Welcome to my personal website! I'm passionate about learning and growing in the field of business administration.</p>
+            </div>
+        </div>
+
+        <!-- About Page -->
+        <div id="about" class="page">
+            <div class="section">
+                <h2>About Me</h2>
+                <p>Hello! I'm Varun Jayakumar, a dedicated IMBA student at Rajagiri College of Social Sciences. I recently completed my 12th grade and I'm excited to be pursuing my Integrated Master of Business Administration degree.</p>
+
+                
+               <p>My goal is to excel in my IMBA program, develop strong business skills, and eventually become a successful business professional who can contribute meaningfully to society.</p>
+
+                <h2>My Skills</h2>
+                <div class="skills">
+                    <div class="skill">
+                        <h3>Academic Skills</h3>
+                        <p>Research, presentation, analytical thinking</p>
+                    </div>
+                    <div class="skill">
+                        <h3>Business Knowledge</h3>
+                        <p>Management, strategic thinking, problem-solving</p>
+                    </div>
+                    <div class="skill">
+                        <h3>Communication</h3>
+                        <p>English, Hindi, Malayalam</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education Page -->
+        <div id="education" class="page">
+            <div class="section">
+                <h2>My Education</h2>
+                
+                <div class="qualification">
+                    <h3>Current Education</h3>
+                    <p><strong>Integrated Master of Business Administration (IMBA)</strong><br>
+                    Rajagiri College of Social Sciences<br>
+                    Currently pursuing my IMBA degree with focus on business management and administration</p>
+                </div>
+                
+                <div class="qualification">
+                    <h3>Previous Education</h3>
+                    <p><strong>Higher Secondary Education (12th Grade)</strong><br>
+                    Completed in 2024<br>
+                    Successfully completed my 12th grade with good academic performance</p>
+                </div>
+
+                <div class="qualification">
+                    <h3>Interest</h3>
+                    <p><strong>Business Management:</strong> Strategic planning, organizational behavior<br>
+                    <strong>Entrepreneurship:</strong> Innovation, startup concepts, business development<br>
+                    <strong>Leadership:</strong> Team management, communication, problem-solving</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contact" class="page">
+            <div class="section">
+                <h2>Contact Me</h2>
+                <div class="contact-info">
+                    <p> Email: varunjayakumar101@gmail.com</p>
+                    <p> Phone: +91 8590531820</p>
+                    <p> Location: Kerala, India</p>
+                </div>
+                
+                <h3 style="text-align: center; margin-top: 30px;">Send me a message</h3>
+                <form onsubmit="sendMessage(event)">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="text" placeholder="Subject" required>
+                    <textarea rows="5" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        function sendMessage(event) {
+            event.preventDefault();
+            alert('Message Sent');
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
